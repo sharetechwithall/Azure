@@ -1,0 +1,27 @@
+{
+    "eventFrequency": 500,
+    "varyEventFrequency": false,
+    "repeatWorkflow": true,
+    "timeBetweenRepeat": 0,
+    "varyRepeatFrequency": false,
+    "steps": [{
+            "config": [{"EntityType":"Orders",
+                        "createdDate": "now()",
+                        "orderID": "long(1,100)",
+                        "orderDesc": "alpha(20)", 
+                        "region": "random('CentralAsia','NorthAmerica','EMEA','SouthEastAsia','SouthAmerica','Japan')"
+                        }],
+             "duration": 0 
+},{
+            "config": [{
+                    "EntityType":"OrderSalesSplit",
+                    "OrderSalesDate": "now()", 
+                    "orderID": "long(1,100)",
+                    "Product": "random('Clock','Software','Server', 'Router','Inverter', 'FPGA', 'GPU')", 
+                    "sessionID":"uuid()", 
+                    "firstName":"firstName()",
+                    "lastName":"lastName()"
+                }],
+            "duration": 2000
+        }]
+}

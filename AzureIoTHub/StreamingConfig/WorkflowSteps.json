@@ -17,6 +17,7 @@
                     "EntityType":"OrderSalesSplit",
                     "OrderSalesDate": "now()", 
                     "orderID": "long(1,100)",
+                    "orderSplitID": "long(1,1000)",
                     "Product": "random('Clock','Software','Server', 'Router','Inverter', 'FPGA', 'GPU')", 
                     "sessionID":"uuid()", 
                     "firstName":"firstName()",

@@ -1,0 +1,14 @@
+
+Here is the Python script to mount Azure Blob Storage - 
+
+dbutils.fs.mount(
+  source = "wasbs://<container-name>@<storage-account-name>.blob.core.windows.net",
+  mount_point = "/mnt/<mount-name>",
+  extra_configs = {"<conf-key>":dbutils.secrets.get(scope = "<scope-name>", key = "<key-name>")})
+
+
+<conf-key> - 
+
+<conf-key> can be either fs.azure.account.key.<storage-account-name>.blob.core.windows.net or fs.azure.sas.<container-name>.<storage-account-name>.blob.core.windows.net
+
+
